@@ -1,36 +1,26 @@
-myrebootfun() {
+s-remmote-reboot() {
     #do things with parameters like $1 such as
 for var in "$@"
 do
     ssh sdn@$var 'sudo reboot'
 done
 }
-alias shir-remmote-reboot=myrebootfun
 
-proxymci(){
+shir-proxymci(){
  printf '173709' | openconnect us.cisadd.com  -b --no-cert-check -u iruser148686
 
 mci
 #kill `ps aux|grep openconnect|grep -v grep|cut -c 10-15`
 pkill openconnect
 }
-alias shir-proxymci=proxymci
-installon3(){
+s-install-cell(){
 op
 onos-install -f $OC2
 onos-install -f $OC3
 onos-install -f $OC4
 }
 
-alias shir-install-cell=installon3
-mymcifun(){
-mci
-installon3
-}
-alias shir-mci-install-cell=mymcifun
-
-
-mybyoncell()
+s-byon-cell()
 {
 cd ~/onos-byon/
 onos-app 10.10.20.59 reinstall target/byon-1.0-SNAPSHOT.oar
@@ -38,10 +28,7 @@ onos-app 10.10.20.60 reinstall target/byon-1.0-SNAPSHOT.oar
 onos-app 10.10.20.61 reinstall target/byon-1.0-SNAPSHOT.oar
 }
 
-alias shir-byon-cell=mybyoncell
-
-
-myrestart() {
+s-restart-onos() {
     #do things with parameters like $1 such as
 for var in "$@"
 do
@@ -53,8 +40,6 @@ do
 done
 
 }
-
-alias shir-restart-onos=myrestart
 
 mymassstop() {
     #do things with parameters like $1 such as
@@ -74,4 +59,3 @@ done
 
 alias shir-massstop=mymassstop
 alias shir-maswipe=mymasswipe
-
