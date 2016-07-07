@@ -22,10 +22,8 @@ onos-install -f $OC4
 
 s-byon-cell()
 {
-cd ~/onos-byon/
+cd ~/mybyon/onos-byon/
 onos-app 10.10.20.59 reinstall target/byon-1.0-SNAPSHOT.oar
-onos-app 10.10.20.60 reinstall target/byon-1.0-SNAPSHOT.oar
-onos-app 10.10.20.61 reinstall target/byon-1.0-SNAPSHOT.oar
 }
 
 s-restart-onos() {
