@@ -6,7 +6,7 @@ do
 done
 }
 
-shir-proxymci(){
+s-proxymci(){
  printf '173709' | openconnect us.cisadd.com  -b --no-cert-check -u iruser148686
 
 mci
