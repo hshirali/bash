@@ -1,5 +1,6 @@
 gitupdate(){
 git add .
-git commit -m "update" -a
+mesdate="update from $(hostname) at $(date)"
+git commit -m "update from $(hostname) at $(date)" -a
 git push origin $1
 }
